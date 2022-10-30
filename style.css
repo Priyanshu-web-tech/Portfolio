@@ -3,28 +3,8 @@
   color: white;
   background-color: #212121;
   font-family: "Share Tech Mono", monospace;
-}
-.navbar {
-  height: 12%;
-  display: flex;
-  align-items: center;
-  
-}
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  align-items: center;
-  flex: 1;
-}
-nav ul li {
-  list-style: none;
-  display: inline-block;
-  margin-left: 50px;
-}
-nav ul li a {
-  text-decoration: none;
-  font-size: 13px;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -47,7 +27,7 @@ nav ul li a {
 .profile {
   margin-top: 2rem;
   width: 20%;
-  
+
   transform: rotate(-4deg);
   transition: all 0.5s;
 }
@@ -72,6 +52,8 @@ nav ul li a {
   flex-direction: row;
   justify-content: space-evenly;
   background-color: #535353;
+  border: 1px solid #535353;
+  border-radius: 15px;
 }
 .skills-col {
   padding: 2rem;
@@ -108,21 +90,109 @@ nav ul li a {
   .hi {
     font-size: 16px;
   }
-  
 }
 @media screen and (max-width: 900px) {
-  nav ul li {
-    display: flex;
-    flex-direction: column;
-    margin-left: 50px;
-    padding: 0.5rem;
-  }
   .profile {
     width: 40%;
   }
 }
+
 @media screen and (max-width: 500px) {
   .profile {
     width: 50%;
+  }
+}
+
+.btn2 {
+  border-radius: 0%;
+  border-color: transparent;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.navbar {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin-top: 0.8rem;
+}
+
+.navbar-links {
+  height: 100%;
+}
+
+.brand-title {
+  font-size: 2rem;
+  margin: 0.5rem;
+}
+
+.navbar-links ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  list-style: none;
+  margin-left: 20px;
+}
+
+.navbar-links li a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  font-size: 13px;
+}
+
+.toggle-button {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .toggle-button {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+    width: 100%;
+  }
+
+  .navbar-links ul {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .navbar-links ul li {
+    text-align: center;
+  }
+
+  .navbar-links ul li a {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-links.active {
+    display: flex;
   }
 }

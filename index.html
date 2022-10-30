@@ -6,12 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css" />
-    <meta name="google-site-verification" content="rfXxtRIQJYDno_5drwRrzEGNyBSPSbmxRC7VqaWwghI" />
+    <meta
+      name="google-site-verification"
+      content="rfXxtRIQJYDno_5drwRrzEGNyBSPSbmxRC7VqaWwghI"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
   </head>
   <body>
     <div class="container">
-        
-      <div class="navbar">
+      <!-- <div class="navbar">
         <h1>Portfolio</h1>
         <nav>
             
@@ -35,7 +41,39 @@
             </li>
           </ul>
         </nav>
-      </div>
+      </div> -->
+
+      <nav class="navbar">
+        <h1 class="brand-title">Portfolio</h1>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+          <ul>
+            <li>
+              <a href="#"><button class="btn2">Home</button></a>
+            </li>
+            <li>
+              <a href="https://github.com/Priyanshu-web-tech/Quiz-Game"
+                ><button class="btn2">Projects</button></a
+              >
+            </li>
+            <li>
+              <a href="contact_us.html">
+                <button class="btn">Contact</button></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://drive.google.com/file/d/1-EwcIs-H1tIEAOvR8b9uVZL4tAIJJGcy/view?usp=sharing"
+                ><button class="btn">Download CV</button></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
 
       <div>
         <img class="profile" src="./images/man.jpg" alt="" />
@@ -116,5 +154,13 @@
         </form>
       </div>
     </div>
+    <script>
+      const toggleButton = document.getElementsByClassName("toggle-button")[0];
+      const navbarLinks = document.getElementsByClassName("navbar-links")[0];
+
+      toggleButton.addEventListener("click", () => {
+        navbarLinks.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>
