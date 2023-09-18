@@ -14,6 +14,8 @@ html {
 
 nav ul {
     list-style: none;
+    margin-right: 1.5rem;
+
 }
 
 nav a {
@@ -27,6 +29,7 @@ nav a:hover {
 }
 
 nav {
+    position: sticky;
     top: 0;
     z-index: 100;
     display: flex;
@@ -99,35 +102,59 @@ nav {
 
 /* Hero Section */
 #hero {
+    position: relative;
+    overflow: hidden;
+    text-align: right; 
+    padding: 150px 0;
+    color: #fff;
+    min-height: 100vh; 
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: url(./assets/bg.jpg);
     background-size: cover;
     background-position: center;
-    text-align: center;
-    padding: 100px 0;
-    color: #fff;
-    height: 100vh;
+    z-index: -1;
+    background-attachment: fixed;
+    filter: brightness(0.7);
 }
 
 .hero-content {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0;
+    margin-right: 1rem;
+    position: relative;
+    padding-right: 20px; 
 }
 
-.hero-content h1 {
-    margin-top: 6rem;
-    font-size: 2.5rem;
+.hero-text {
+    text-align: right;
+}
+
+.hero-text h1 {
+    margin-top: 0.5rem;
+    font-size: 4rem;
     font-weight: bold;
+    letter-spacing: 2px;
 }
 
-.hero-content p {
+.hero-text p {
     margin-top: 20px;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
+    opacity: 0.8;
 }
 
 .cta-button {
     display: inline-block;
     margin-top: 30px;
-    padding: 10px 20px;
+    padding: 15px 40px;
     background-color: #ff6600;
     color: #fff;
     text-decoration: none;
@@ -138,7 +165,6 @@ nav {
 .cta-button:hover {
     background-color: #ff9933;
 }
-
 
 
 /* About Section */
@@ -181,7 +207,7 @@ nav {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 820px) {
     #about {
         padding: 40px 0;
     }
@@ -199,9 +225,6 @@ nav {
         font-size: 1rem;
     }
 }
-
-
-
 
 
 /* Skills Section */
