@@ -4,204 +4,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Priyanshu</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Priyanshu.</title>
+    <link rel="stylesheet" href="./CSS/style.css">
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script>
 
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav id="nav">
-        <div class="logo">
-            <img src="./assets/logo.png" alt="">
-        </div>
-        <div class="menu-toggle">
-            <img class="bar" id="toggle-icon" src="./assets/open.png" alt="Menu">
-        </div>
-
-        <ul class="menu">
-            <li><a href="#nav">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">My Work</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-<!-- Hero -->
-<section id="hero">
-    <div class="parallax-bg"></div>
-    <div class="hero-content">
-        <div class="hero-text">
-            <h1>Hi, I'm Priyanshu</h1>
-            <p>Your Front End Expert</p>
-        </div>
-        <a href="https://drive.google.com/file/d/1O4ta115lkyK4T-mZ6IXr-KK9Q-ugwkzt/view?usp=drive_link"
-            class="cta-button">Download My Resume</a>
+    <div id="loader">
+        <img src="./assets/loader.gif" alt="">
     </div>
-</section>
+
+    <div id="container">
+        <div class="cursor-dot" data-cursor-dot></div>
+        <div class="cursor-outline" data-cursor-outline></div>
 
 
-    <!-- About -->
-    <section id="about">
-        <div class="about-content">
-            <h2>About Me</h2>
-            <p>Hi, I'm a Pre Final Year student at ABESEC, pursuing my Bachelor's of Technology in Computer Science with
-                specialization in DATA SCIENCE. I am very passionate about Web Development & Machine Learning and have a
-                keen interest to learn more about these technologies. I'm looking forward to new opportunities. Feel
-                Free to contact me..</p>
-        </div>
-    </section>
+        <!-- Navbar -->
+        <nav id="nav">
+            <div class="logo">
+                <img id="logo-img" src="./assets/logo.png" alt="">
+            </div>
+            <div class="menu-toggle">
+                <img class="bar" id="toggle-icon" src="./assets/open.png" alt="Menu">
+            </div>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="skills-content">
-            <h2>My Skills</h2>
-            <div class="skill-list">
-                <div class="skill">
-                    <i class="fab fa-html5"></i>
-                    <p>HTML</p>
-                </div>
-                <div class="skill">
-                    <i class="fab fa-css3"></i>
-                    <p>CSS</p>
-                </div>
-                <div class="skill">
-                    <i class="fab fa-js"></i>
-                    <p>JavaScript</p>
-                </div>
-                <div class="skill">
-                    <i class="fab fa-react"></i>
-                    <p>React.js</p>
-                </div>
-                <div class="skill">
-                    <i class="fas fa-database"></i>
-                    <p>SQL</p>
-                </div>
-                <div class="skill">
-                    <i class="fab fa-php"></i>
-                    <p>PHP</p>
-                </div>
-                <div class="skill">
-                    <i class="fas fa-code"></i>
-                    <p>C++</p>
-                </div>
-                <div class="skill">
-                    <i class="fas fa-code"></i>
-                    <p>C</p>
-                </div>
-                <div class="skill">
-                    <i class="fab fa-python"></i>
-                    <p>Python</p>
+            <ul class="menu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">My Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="moon">
+                <img id="switch-icon" src="./assets/sun.png" alt="">
+            </div>
+
+        </nav>
+
+
+        <!-- Hero -->
+        <section class="hero-content">
+            <div class="lottie-container">
+                <div class="lottie-animation" id="lottie-animation"></div>
+            </div>
+            <div class="text-content">
+                <div>
+                    <h2 id="fadeInH2">Hi I'm</h2>
+                    <h1 id="fadeInH1">Priyanshu</h1>
+                    <p class="tagline" id="fadeInTagline">Your Front End Expert</p>
                 </div>
             </div>
+        </section>
+
+
+        <!-- Marquee -->
+        <div class="marquee-container">
+            <marquee behavior="scroll" direction="left" class="marquee" scrollamount="20">
+                Elevating user experiences through creative design and cutting-edge technology
+            </marquee>
+            <br />
+            <marquee behavior="scroll" direction="right" class="marquee" scrollamount="20">
+                Transforming ideas into reality – one line of code at a time. </marquee>
         </div>
-    </section>
 
+        <!-- HTML -->
+        <section class="aboutme" id="about">
+            <h1>Who am I?</h1>
+            <div class="about-inner">
+                <div class="about-content">
 
-    <!-- Project Section -->
-    <section id="projects">
-        <div class="projects-content">
-            <h2>Projects</h2>
-            <div class="project-card">
-                <div class="project-info">
-                    <h3>BitMap</h3>
-                    <p>A CryptoCurrency Tracker providing updated information about different cryptocurrencies.</p>
-                </div>
-                <div class="project-links">
-                    <a href="https://bit-map.netlify.app/" class="project-link">View Project <i
-                            class="fas fa-arrow-right"></i></a>
+                    <div class="description">
+
+                        <div class="desp-inner">
+
+                            <p>Hi, I'm a pre-final year student at ABESEC, majoring in Computer Science with a focus on
+                                Data
+                                Science. I'm passionate about Web Development and Machine Learning. I've worked on
+                                diverse
+                                projects, showcasing my skills in creating responsive web applications and exploring
+                                machine
+                                learning concepts like predictive modeling and pattern recognition. I'm actively seeking
+                                opportunities to further my knowledge and contribute to innovative projects. Feel free
+                                to
+                                reach
+                                out; I'm excited to connect and explore new possibilities!</p>
+                        </div>
+                        <a href="#" class="download-button">Download Resume</a>
+                    </div>
+
+                    <div class="image-container">
+                        <img src="assets/mypic.jpg" alt="My Picture" class="my-picture">
+                    </div>
                 </div>
             </div>
-            <div class="project-card">
-                <div class="project-info">
-                    <h3>PresentSeek</h3>
-                    <p>Attendance Management System with advanced facilities like attendance prediction.</p>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/Priyanshu-web-tech/PresentSeek" class="project-link">View Project <i
-                            class="fas fa-arrow-right"></i></a>
+        </section>
+
+
+        <!-- Skills -->
+        <section class="skills" id="skills">
+            <h1>My Skills</h1>
+            <div class="skills-content">
+                <div class="skill-list">
+                    <div class="skill">
+                        <i class="fab fa-html5"></i>
+                        <p>HTML</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-css3"></i>
+                        <p>CSS</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-js"></i>
+                        <p>JavaScript</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-react"></i>
+                        <p>React.js</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fas fa-database"></i>
+                        <p>SQL</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-php"></i>
+                        <p>PHP</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fas fa-code"></i>
+                        <p>C++</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fas fa-code"></i>
+                        <p>C</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-python"></i>
+                        <p>Python</p>
+                    </div>
                 </div>
             </div>
-            <div class="project-card">
-                <div class="project-info">
-                    <h3>My Gallery</h3>
-                    <p>Image Gallery build with Unsplash API to provide images based on entered topic</p>
-                </div>
-                <div class="project-links">
-                    <a href="https://wondrous-pixie-fe47ad.netlify.app/" class="project-link">View Project <i
-                            class="fas fa-arrow-right"></i></a>
+        </section>
+
+        <!-- Projects -->
+        <section class="projects" id="projects">
+            <h1>My Work</h1>
+            <div class="inner-project">
+                <div class="list">
+                    <div class="card">
+                        <img src="assets/first.jpg" alt="Project 1">
+                        <div class="overlay">
+                            <h3>BitMap</h3>
+                            <p>A CryptoCurrency Tracker providing updated information about different cryptocurrencies.</p>
+                            <a target="_blank" href="https://bit-map.netlify.app/" class="redirect-link"><i class="fas fa-external-link-alt"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/second.jpg" alt="Project 2">
+                        <div class="overlay">
+                            <h3>PresentSeek</h3>
+                            <p>Attendance Management System with advanced facilities like attendance prediction.</p>
+                            <a target="_blank" href="https://github.com/Priyanshu-web-tech/PresentSeek" class="redirect-link"><i class="fas fa-external-link-alt"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/third.jpg" alt="Project 3">
+                        <div class="overlay">
+                            <h3>My Gallery</h3>
+                            <p>Image Gallery build with Unsplash API to provide images based on entered topic</p>
+                            <a target="_blank" href="https://wondrous-pixie-fe47ad.netlify.app/" class="redirect-link"><i class="fas fa-external-link-alt"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/fourth.jpg" alt="Project 4">
+                        <div class="overlay">
+                            <h3>Memory Quest</h3>
+                            <p>Memory Quest is an engaging memory game where you race against the clock to match pairs of cards. Test your memory skills, achieve the best score, and immerse yourself in the challenge.</p>
+                            <a target="_blank" href="https://memory-quest.netlify.app/" class="redirect-link"><i class="fas fa-external-link-alt"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/fifth.jpg" alt="Project 5">
+                        <div class="overlay">
+                            <h3>GitHub Profile Viewer</h3>
+                            <p>A GitHub Profile View,It fetches details from GitHub API and present you in visually apealing manner</p>
+                            <a target="_blank" href="https://github-prviewer.netlify.app/" class="redirect-link"><i class="fas fa-external-link-alt"></i>
+                            </a>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <!-- Contact -->
-    <section id="contact">
-        <div class="contact-content">
-            <h1>Contact Me</h1>
-            <p>If you have any questions or queries, feel free to connect with me.</p>
-            <form action="#" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+        <!-- Contact -->
+        <section class="contact" id="contact">
+            <h1>Connect with me!</h1>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+            <div class="inner-contact">
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
+                <div id="left-side">
+                    <div id="lottie-animation2"></div>
 
-                <button type="submit" class="cta-button">Send Message</button>
-            </form>
-        </div>
-    </section>
+                </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2023. All Rights Reserved. | Made by <a
-                    href="https://www.linkedin.com/in/priyanshu-sharma-025737216/" class="author-link">Priyanshu</a></p>
+                <div id="right-side">
+                    <h2>Say Hi!</h2>
+                    <form>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer>
             <div class="social-icons">
-                <a href="https://www.facebook.com/profile.php?id=100069703429860&mibextid=ZbWKwL" class="social-icon"><i
-                        class="fab fa-facebook-f"></i></a>
-                <a href="https://instagram.com/__priyanshu.sharma" class="social-icon"><i
-                        class="fab fa-instagram"></i></a>
-                <a href="https://github.com/Priyanshu-web-tech" class="social-icon"><i class="fab fa-github"></i></a>
-                <a href="https://twitter.com/Priyans72532451" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
             </div>
-        </div>
-    </footer>
 
+            <div class="copy-right">
+                <p>&copy; 2023 My Portfolio. All Rights Reserved.</p>
+                <p>Made by <span class="made-by">Priyanshu</span></p>
+            </div>
+        </footer>
+    </div>
 
-
-    <script>
-
-        const menuToggle = document.querySelector('.menu-toggle');
-        const menu = document.querySelector('.menu');
-        const toggleIcon = document.getElementById('toggle-icon');
-        const body = document.body;
-
-        menuToggle.addEventListener('click', () => {
-            menu.classList.toggle('active');
-            toggleIcon.src = menu.classList.contains('active') ? './assets/close.png' : './assets/open.png';
-            body.classList.toggle('menu-open', menu.classList.contains('active'));
-        });
-
-        document.querySelectorAll('.menu li').forEach(item => {
-            item.addEventListener('click', () => {
-                menu.classList.remove('active');
-                toggleIcon.src = './assets/open.png';
-                body.classList.remove('menu-open');
-            });
-        });
-
-    </script>
+    <script src="./JS/script.js"></script>
 </body>
 
 </html>
