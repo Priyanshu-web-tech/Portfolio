@@ -408,7 +408,7 @@ nav {
     }
     
     .about-inner{
-        transition: opacity 0.5s, transform 0.5s;
+        transition: opacity 1s, transform 0.5s;
     }
 }
 
