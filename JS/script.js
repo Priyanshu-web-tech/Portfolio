@@ -2,37 +2,32 @@ var savedTheme = localStorage.getItem("theme");
 var icon = document.querySelector("#switch-icon");
 var logoImg = document.getElementById("logo-img");
 if (savedTheme) {
-    document.body.classList.add(savedTheme);
-    logoImg.src="./assets/light-logo.png";
-
+  document.body.classList.add(savedTheme);
+  logoImg.src = "./assets/light-logo.png";
 }
 
-
-
 icon.src = document.body.classList.contains("light-theme")
+  ? "../assets/moon.png"
+  : "../assets/sun.png";
+
+icon.onclick = function () {
+  document.body.classList.toggle("light-theme");
+  var currentTheme = document.body.classList.contains("light-theme")
+    ? "light-theme"
+    : "";
+  localStorage.setItem("theme", currentTheme);
+
+  icon.src = document.body.classList.contains("light-theme")
     ? "../assets/moon.png"
     : "../assets/sun.png";
 
-icon.onclick = function () {
-    document.body.classList.toggle("light-theme");
-    var currentTheme = document.body.classList.contains("light-theme")
-        ? "light-theme"
-        : "";
-    localStorage.setItem("theme", currentTheme);
-
-    icon.src = document.body.classList.contains("light-theme")
-        ? "../assets/moon.png"
-        : "../assets/sun.png";
-
-    // Change the logo image source based on the theme
-    logoImg.src = document.body.classList.contains("light-theme")
-        ? "./assets/light-logo.png"
-        : "./assets/logo.png";
+  // Change the logo image source based on the theme
+  logoImg.src = document.body.classList.contains("light-theme")
+    ? "./assets/light-logo.png"
+    : "./assets/logo.png";
 };
 
-
 // Navbar toggle
-
 
 const menuToggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".menu");
@@ -54,8 +49,6 @@ document.querySelectorAll(".menu li").forEach((item) => {
     body.classList.remove("menu-open");
   });
 });
-
-
 
 // CURSOR
 const cursorDot = document.querySelector("[data-cursor-dot]");
@@ -115,19 +108,70 @@ window.onload = function () {
 
 // Load Lottie animation Hero
 const animation = lottie.loadAnimation({
-    container: document.getElementById('lottie-animation'),
-    renderer: 'svg',
-    loop: true,
-    autoplay: true,
-    path: './assets/man.json', // Adjust the path to your JSON file
+  container: document.getElementById("lottie-animation"),
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+  path: "./assets/man.json",
 });
 
 // Load Lottie animation Contact
 const animation2 = lottie.loadAnimation({
-  container: document.getElementById('lottie-animation2'),
-  renderer: 'svg',
+  container: document.getElementById("lottie-animation2"),
+  renderer: "svg",
   loop: true,
   autoplay: true,
-  path: './assets/contact.json', // Update the path accordingly
+  path: "./assets/contact.json", 
 });
+
+
+
+
+
+// Projects Animation
+document.addEventListener("DOMContentLoaded", function () {
+
+  const projectsSection = document.querySelector(".inner-project");
+  const skillsSection = document.querySelector(".skills-content");
+  const aboutSection = document.querySelector(".about-inner");
+
+
+
+  const observeSection = (section, threshold = 0) => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          section.classList.add("in-view");
+        } else {
+          section.classList.remove("in-view");
+        }
+      });
+    }, { threshold });
+
+    observer.observe(section);
+  };
+
+  observeSection(projectsSection);
+  observeSection(skillsSection, 0.2); 
+  observeSection(aboutSection);
+
+  const headings = document.querySelectorAll(".aboutme h1, .skills h1, .projects h1, .contact h1");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const heading = entry.target;
+      if (entry.isIntersecting) {
+        heading.classList.add("in-view");
+      } else {
+        heading.classList.remove("in-view");
+      }
+    });
+  }, { threshold: 0.5 });
+
+  headings.forEach((heading) => {
+    heading.classList.add("in-view"); 
+    observer.observe(heading);
+  });
+});
+
 

@@ -5,10 +5,8 @@
     --primary-color: #00ced1;
     --secondary-color: #0C8181;
     --light-gray: rgba(0, 0, 0, 0.7);
-
     --light-black: #1E1E1F;
     --dark-black: #111;
-
     --transparent: transparent;
     --white: #fff;
 }
@@ -16,7 +14,6 @@
 .light-theme {
     --background-color: #fff;
     --light-black: #f0f0f0;
-
     --dark-black: #fff;
     --white: #111;
 }
@@ -24,7 +21,6 @@
 body {
     cursor: none;
     user-select: none;
-   
 }
 
 html {
@@ -54,6 +50,9 @@ a {
 #container {
     opacity: 0;
     transition: opacity 0.5s ease;
+    height: 100%;
+    width: 100%;
+    
 }
 
 .fade-in {
@@ -108,14 +107,29 @@ nav ul {
     margin-right: 1.5rem;
 }
 
-nav a {
-    transition: color 0.3s ease-in-out;
-}
-
-nav a:hover {
-    color: var(--primary-color);
-}
-
+nav a{
+    padding: 1rem;
+    font-size: 1rem;
+    color: var(--white);
+    position: relative;
+  }
+  
+  
+  nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 1s ease; 
+  }
+  
+  nav a:hover::after {
+    width: 100%;
+  }
+  
 nav {
     position: sticky;
     top: 0;
@@ -283,7 +297,6 @@ nav {
 }
 
 
-
 /* Marquee */
 .marquee-container {
     display: flex;
@@ -306,9 +319,19 @@ nav {
 }
 
 .aboutme h1 {
+    margin-top: 8rem;
     text-align: center;
     font-size: 3rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 2s, transform 2s;
 }
+
+.aboutme h1.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 .about-content {
     width: 90%;
@@ -323,6 +346,14 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity 2s, transform 2s;
+}
+
+.about-inner.in-view {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .description {
@@ -376,6 +407,9 @@ nav {
         width: 100%;
     }
     
+    .about-inner{
+        transition: opacity 0.5s, transform 0.5s;
+    }
 }
 
 /* Skills */
@@ -390,13 +424,28 @@ nav {
 .skills h1 {
     text-align: center;
     font-size: 3rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 2s, transform 2s;
 
+}
+
+.skills h1.in-view {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .skills-content {
     max-width: 800px;
     margin: 0 auto;
     margin-top: 2rem;
+    opacity: 0;
+    transition: opacity 2s; 
+}
+
+.skills-content.in-view {
+    opacity: 1;
+    
 }
 
 .skill-list {
@@ -461,18 +510,36 @@ nav {
     background-color: var(--background-color);
     color: var(--white);
     padding: 80px 0;
-
+    
 }
 
 .inner-project {
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 3s, transform 3s;
+
+}
+
+.inner-project.in-view {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .projects h1 {
+    margin-top: 8rem;
     text-align: center;
     font-size: 3rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 2s, transform 2s;
+}
+
+.projects h1.in-view {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .list {
@@ -553,6 +620,10 @@ nav {
         display: flex;
         flex-direction: column;
     }
+    .inner-project{
+        transition: opacity 1s, transform 1s;
+
+    }
 }
 
 
@@ -561,6 +632,18 @@ nav {
 .contact {
     background-color: var(--background-color);
     color: var(--white);
+}
+
+.contact h1{
+    padding-top: 8rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 2s, transform 2s;
+}
+
+.contact h1.in-view {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .contact h1,
@@ -642,6 +725,7 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+    padding-top: 8rem;
 }
 
 .social-icons {
@@ -653,6 +737,13 @@ footer {
     margin: 0 10px;
     text-decoration: none;
     font-size: 20px;
+}
+
+.social-icons i{
+    transition: transform 0.3s ease-in-out;
+}
+.social-icons i:hover{
+    transform: scale(1.5);
 }
 
 .copy-right {
