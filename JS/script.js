@@ -1,9 +1,15 @@
 var savedTheme = localStorage.getItem("theme");
 var icon = document.querySelector("#switch-icon");
 var logoImg = document.getElementById("logo-img");
+
+// Set the background color based on the saved theme
+document.body.style.background = savedTheme === "light-theme" ? "#fff" : "#111";
 if (savedTheme) {
   document.body.classList.add(savedTheme);
-  logoImg.src = "./assets/light-logo.png";
+
+  logoImg.src = document.body.classList.contains("light-theme")
+    ? "./assets/light-logo.png"
+    : "./assets/logo.png";
 }
 
 icon.src = document.body.classList.contains("light-theme")
@@ -21,14 +27,27 @@ icon.onclick = function () {
     ? "../assets/moon.png"
     : "../assets/sun.png";
 
-  // Change the logo image source based on the theme
   logoImg.src = document.body.classList.contains("light-theme")
     ? "./assets/light-logo.png"
     : "./assets/logo.png";
 };
 
-// Navbar toggle
+// Loader
+window.onload = function () {
+  var loader = document.getElementById("loader");
+  var container = document.getElementById("container");
+  var originalOverflow = document.body.style.overflow;
 
+  document.body.style.overflow = "hidden";
+  setTimeout(function () {
+    document.body.style.overflow = originalOverflow;
+
+    loader.style.display = "none";
+    container.classList.add("fade-in");
+  }, 1500);
+};
+
+// Navbar toggle
 const menuToggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".menu");
 const toggleIcon = document.getElementById("toggle-icon");
@@ -88,24 +107,6 @@ window.addEventListener("mousemove", function (e) {
   );
 });
 
-// Loader
-window.onload = function () {
-  var loader = document.getElementById("loader");
-  var container = document.getElementById("container");
-  var originalOverflow = document.body.style.overflow;
-
-  if (savedTheme) document.body.style.background = "#fff";
-  else document.body.style.background = "#111";
-
-  document.body.style.overflow = "hidden";
-  setTimeout(function () {
-    document.body.style.overflow = originalOverflow;
-
-    loader.style.display = "none";
-    container.classList.add("fade-in");
-  }, 1500);
-};
-
 // Load Lottie animation Hero
 const animation = lottie.loadAnimation({
   container: document.getElementById("lottie-animation"),
@@ -121,57 +122,56 @@ const animation2 = lottie.loadAnimation({
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "./assets/contact.json", 
+  path: "./assets/contact.json",
 });
 
-
-
-
-
-// Projects Animation
+//Animations
 document.addEventListener("DOMContentLoaded", function () {
-
   const projectsSection = document.querySelector(".inner-project");
   const skillsSection = document.querySelector(".skills-content");
   const aboutSection = document.querySelector(".about-inner");
 
-
-
   const observeSection = (section, threshold = 0) => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          section.classList.add("in-view");
-        } else {
-          section.classList.remove("in-view");
-        }
-      });
-    }, { threshold });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            section.classList.add("in-view");
+          } else {
+            section.classList.remove("in-view");
+          }
+        });
+      },
+      { threshold }
+    );
 
     observer.observe(section);
   };
 
   observeSection(projectsSection);
-  observeSection(skillsSection, 0.2); 
+  observeSection(skillsSection, 0.2);
   observeSection(aboutSection);
 
-  const headings = document.querySelectorAll(".aboutme h1, .skills h1, .projects h1, .contact h1");
+  const headings = document.querySelectorAll(
+    ".aboutme h1, .skills h1, .projects h1, .contact h1"
+  );
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      const heading = entry.target;
-      if (entry.isIntersecting) {
-        heading.classList.add("in-view");
-      } else {
-        heading.classList.remove("in-view");
-      }
-    });
-  }, { threshold: 0.5 });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const heading = entry.target;
+        if (entry.isIntersecting) {
+          heading.classList.add("in-view");
+        } else {
+          heading.classList.remove("in-view");
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
 
   headings.forEach((heading) => {
-    heading.classList.add("in-view"); 
+    heading.classList.add("in-view");
     observer.observe(heading);
   });
 });
-
-
